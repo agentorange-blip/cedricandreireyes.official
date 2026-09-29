@@ -16,3 +16,81 @@
 @media(max-width:1000px){.nav{gap:16px}.brand{width:155px}.interest-grid,.social-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.about-profile{grid-template-columns:1fr}.feature-wrap{grid-template-columns:1fr}.socials-heading{display:block}.socials-lead{margin-top:25px}}
 @media(max-width:680px){.site-header{height:100px;padding:0 20px}.brand{width:205px;max-width:72vw}.menu-toggle{display:block;z-index:3}.nav{position:fixed;inset:0;background:rgba(2,4,12,.97);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:25px;transform:translateY(-100%);transition:.5s var(--ease)}.nav.open{transform:none}.nav a{font-size:14px}.hero{padding:155px 24px 80px}.hero-logo-wrap{width:90vw}.hero h1{font-size:56px}.hero p{font-size:14px}.section{padding:90px 22px}.split,.interest-grid,.social-grid,.gallery-grid,.idols-duo{grid-template-columns:1fr}.interest-card{min-height:280px}.feature-wrap{gap:40px}.page-hero{min-height:62vh;padding:150px 22px 70px}.page-hero h1{font-size:56px}.about-photo{order:2}.fact-grid{grid-template-columns:1fr}.gallery-card,.gallery-card img{min-height:380px}.marvel-grid .gallery-card:first-child{grid-column:auto;grid-row:auto}.marvel-grid .gallery-card:first-child img{min-height:380px}.idol-card{min-height:560px}.lightbox{padding:20px}.lightbox-prev{left:10px}.lightbox-next{right:10px}.lightbox-close{right:10px;top:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* =========================================================
+   COSMIC CLICK BURST
+========================================================= */
+
+.image-trigger {
+  position: relative;
+  overflow: visible;
+}
+
+
+.cosmic-click-burst {
+
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  margin-left: -10px;
+  margin-top: -10px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 20;
+
+  border:
+    2px solid rgba(116,229,255,.9);
+
+  box-shadow:
+    0 0 10px rgba(116,229,255,.9),
+    0 0 25px rgba(84,169,255,.7),
+    0 0 45px rgba(255,54,95,.45);
+
+  animation:
+    cosmicClickBurst .7s
+    cubic-bezier(.2,.75,.2,1)
+    forwards;
+
+}
+
+
+@keyframes cosmicClickBurst {
+
+  0% {
+
+    width: 20px;
+    height: 20px;
+
+    opacity: 1;
+
+    transform:
+      scale(.3);
+
+  }
+
+  60% {
+
+    opacity: .8;
+
+  }
+
+  100% {
+
+    width: 240px;
+    height: 240px;
+
+    margin-left: -120px;
+    margin-top: -120px;
+
+    opacity: 0;
+
+    transform:
+      scale(1);
+
+  }
+
+}
