@@ -1,0 +1,11 @@
+CEDRIC UNIVERSE FINAL BUILD
+- Cosmic/universe visual direction retained.
+- Navigation: HOME / ABOUT / IMAGES / SHOTS / EDITS / IDOLS / MARVEL.
+- BSIT (not BSIT-B).
+- Red + blue click energy effect and lightbox.
+- Cursor glow, starfield, scroll reveal, 3D tilt, marquee, responsive mobile menu, page-specific sections.
+- Social links included: YouTube, Facebook, Instagram, TikTok.
+- IDOLS labels: Whitney Houston — THE VOICE; Michael Jackson — THE KING OF POP.
+- Gallery filenames follow user's parentheses convention.
+- ABOUT portrait intentionally left as a non-broken placeholder until the user's separate ABOUT photo is supplied.
+- Asset folder names use the user's actual uppercase folders: IDOLS, MARVEL, IMAGES, SHOTS, EDITS.
