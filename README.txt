@@ -1,7 +1,7 @@
 CEDRIC UNIVERSE FINAL BUILD
 - Cosmic/universe visual direction retained.
 - Navigation: HOME / ABOUT / IMAGES / SHOTS / EDITS / IDOLS / MARVEL.
-- BSIT (not BSIT-B).
+- BSIT
 - Red + blue click energy effect and lightbox.
 - Cursor glow, starfield, scroll reveal, 3D tilt, marquee, responsive mobile menu, page-specific sections.
 - Social links included: YouTube, Facebook, Instagram, TikTok.
