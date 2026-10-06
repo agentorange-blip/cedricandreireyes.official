@@ -1,55 +1,171 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#030611">
-<title>Idols — Cedric Reyes</title>
-<meta name="description" content="Cedric Reyes — a cosmic portfolio of photography, digital edits, gaming, and creative work.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050816">
+<title>Idols — Whitney Houston & Michael Jackson | Cedric Reyes</title>
+<meta name="description" content="A personal tribute by Cedric Reyes to Whitney Houston and Michael Jackson — two artists whose music continues to inspire memory, emotion, and creativity.">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* =========================================================
+   IDOLS — WHITNEY HOUSTON & MICHAEL JACKSON
+   Page-specific styling kept here so the main stylesheet stays intact.
+   ========================================================= */
+.idols-page { padding-top: 88px; overflow: hidden; }
+.idols-hero {
+  min-height: 82svh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 8vh 5vw 7vh;
+  isolation: isolate;
+}
+.idols-hero::before {
+  content:""; position:absolute; inset:12% 7%; border:1px solid rgba(170,204,255,.12);
+  border-radius:50%; transform:rotate(-7deg); pointer-events:none; z-index:-1;
+  box-shadow:0 0 80px rgba(84,169,255,.05), inset 0 0 80px rgba(159,124,255,.035);
+}
+.idols-hero::after {
+  content:""; position:absolute; width:520px; height:520px; border-radius:50%;
+  background:radial-gradient(circle, rgba(201,161,91,.12), transparent 68%);
+  filter:blur(8px); z-index:-2; pointer-events:none;
+}
+.idols-hero-inner { width:min(1120px,100%); text-align:center; }
+.idols-hero .eyebrow { justify-content:center; }
+.idols-hero h1 {
+  margin:20px 0 18px; font-size:clamp(46px,8vw,112px); line-height:.88;
+  letter-spacing:-.055em; font-weight:800;
+}
+.idols-hero h1 span {
+  display:block; color:transparent;
+  -webkit-text-stroke:1px rgba(244,247,255,.55);
+  text-shadow:0 0 34px rgba(116,229,255,.08);
+}
+.idols-hero-copy { max-width:760px; margin:0 auto; color:var(--muted); font-size:16px; line-height:1.85; }
+.idols-hero-art { margin:44px auto 0; width:min(980px,100%); position:relative; }
+.idols-hero-art img { width:100%; display:block; border:1px solid rgba(255,255,255,.12); box-shadow:0 28px 90px rgba(0,0,0,.42); }
+.idols-hero-art::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(3,6,17,.65)); pointer-events:none; }
+.idols-caption { position:absolute; left:24px; bottom:20px; z-index:2; font-size:10px; letter-spacing:.24em; font-weight:800; color:#fff; opacity:.8; }
+.idols-intro { padding-top:10vh; }
+.idols-intro .lead { max-width:800px; }
+.idols-duo { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; margin-top:55px; }
+.idol-card { position:relative; min-height:620px; overflow:hidden; border:1px solid rgba(170,204,255,.14); background:#050816; isolation:isolate; }
+.idol-card img { width:100%; height:100%; min-height:620px; object-fit:cover; display:block; transition:transform 1.2s cubic-bezier(.2,.8,.2,1), filter .8s; filter:saturate(.82) contrast(1.04); }
+.idol-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 25%,rgba(3,6,17,.08) 42%,rgba(3,6,17,.94) 100%); z-index:1; }
+.idol-card:hover img { transform:scale(1.045); filter:saturate(1) contrast(1.06); }
+.idol-card-content { position:absolute; left:30px; right:30px; bottom:28px; z-index:2; }
+.idol-number { font-size:10px; letter-spacing:.25em; color:var(--cyan); font-weight:800; }
+.idol-card h3 { margin:10px 0 8px; font-size:clamp(32px,4vw,58px); line-height:.9; letter-spacing:-.045em; }
+.idol-card h3 span { color:var(--gold); }
+.idol-card p { max-width:480px; color:#c3cde1; line-height:1.7; margin:0; }
+.idol-card .idol-tag { display:inline-block; margin-top:18px; padding:8px 12px; border:1px solid rgba(255,255,255,.16); font-size:9px; letter-spacing:.2em; font-weight:800; color:#e9efff; }
+.idol-words { padding-top:13vh; padding-bottom:10vh; }
+.idol-words-inner { max-width:1000px; margin:auto; text-align:center; }
+.idol-words blockquote { margin:25px auto 0; font-family:"Cormorant Garamond",serif; font-size:clamp(32px,5vw,66px); line-height:1.02; letter-spacing:-.02em; color:#f7f9ff; }
+.idol-words blockquote em { color:var(--gold); font-style:normal; }
+.idol-words .small-wording { max-width:720px; margin:28px auto 0; color:var(--muted); line-height:1.85; }
+.idol-divider { width:min(720px,85%); height:1px; margin:55px auto 0; background:linear-gradient(90deg,transparent,rgba(116,229,255,.55),rgba(201,161,91,.55),transparent); position:relative; }
+.idol-divider::after { content:"✦"; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); padding:0 15px; color:var(--gold); background:var(--bg); }
+.idol-marquee { margin:0 0 10vh; }
+.idol-final { min-height:55vh; display:grid; place-items:center; text-align:center; padding:10vh 5vw 14vh; position:relative; }
+.idol-final h2 { font-size:clamp(40px,7vw,88px); line-height:.9; letter-spacing:-.055em; }
+.idol-final h2 span { color:var(--cyan); }
+.idol-final p { max-width:650px; margin:24px auto 0; color:var(--muted); line-height:1.8; }
+.idol-back { margin-top:35px; }
+@media (max-width:900px){ .idols-duo{grid-template-columns:1fr}.idol-card,.idol-card img{min-height:570px} }
+@media (max-width:680px){
+  .idols-page{padding-top:76px}.idols-hero{min-height:auto;padding-top:12vh}.idols-hero h1{font-size:clamp(44px,14vw,76px)}
+  .idols-hero-art{margin-top:32px}.idols-caption{left:14px;bottom:14px;font-size:8px}.idol-card,.idol-card img{min-height:500px}.idol-card-content{left:20px;right:20px;bottom:20px}
+  .idol-words{padding-top:10vh}.idol-final{min-height:48vh}
+}
+@media (prefers-reduced-motion:reduce){.idol-card img{transition:none}}
+</style>
 </head>
 <body>
 <canvas id="stars"></canvas>
 <div class="nebula nebula-a"></div><div class="nebula nebula-b"></div><div class="nebula nebula-c"></div>
 <div class="cursor-glow"></div>
+
 <header class="site-header">
-<a class="brand" href="index.html"><img src="assets/HEADER-LOGO.png" alt="Cedric Reyes"></a>
-<button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-<nav class="nav"><a class="" href="index.html">HOME</a>
-<a class="" href="about.html">ABOUT</a>
-<a class="" href="images.html">IMAGES</a>
-<a class="" href="shots.html">SHOTS</a>
-<a class="" href="edits.html">EDITS</a>
-<a class="active" href="idols.html">IDOLS</a>
-<a class="" href="marvel.html">MARVEL</a></nav>
+  <a class="brand" href="index.html" aria-label="Cedric Reyes home"><img src="assets/header-logo.svg" alt="Cedric Reyes"></a>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="images.html">IMAGES</a>
+    <a href="shots.html">SHOTS</a>
+    <a href="edits.html">EDITS</a>
+    <a class="active" href="idols.html">IDOLS</a>
+    <a href="marvel.html">MARVEL</a>
+  </nav>
 </header>
-<main class="inner-page idols-page">
-<section class="page-hero idols-hero"><div class="page-hero-copy reveal"><div class="eyebrow"><span></span> MUSIC • MEMORY • LEGACY</div><h1>Two voices.<br><span>One lasting universe.</span></h1><p>Some artists become more than names on a screen. Their voices, movement, presence, and stories become part of the memories people carry. This space is dedicated to Whitney Houston and Michael Jackson.</p></div>
-<div class="idols-hero-art tilt reveal"><img src="assets/IDOLS/king-and-queen.png" alt="Whitney Houston and Michael Jackson"></div></section>
-<section class="section idols-intro"><div class="section-kicker">01 / THE TWO ICONS</div><div class="split"><h2 class="reveal">Different stories.<br><span>Endless echoes.</span></h2><p class="lead reveal">Whitney Houston and Michael Jackson created in different ways, but both left behind something that cannot be measured only by records or performances: a feeling. Their work became memory, inspiration, and a language of its own.</p></div>
-<div class="idols-duo">
-<article class="idol-card tilt reveal image-trigger" data-caption="WHITNEY HOUSTON — THE VOICE"><img src="assets/IDOLS/whitney-houston.jpg" alt="Whitney Houston"><div><span>01 / THE VOICE</span><h3>WHITNEY<br><em>HOUSTON</em></h3><p>A voice remembered for its power, warmth, emotion, and ability to make a moment feel personal.</p></div></article>
-<article class="idol-card tilt reveal image-trigger" data-caption="MICHAEL JACKSON — THE KING OF POP"><img src="assets/IDOLS/michael-jackson.jpg" alt="Michael Jackson"><div><span>02 / THE KING OF POP</span><h3>MICHAEL<br><em>JACKSON</em></h3><p>An artist remembered for turning music, movement, imagination, and performance into a world of his own.</p></div></article>
-</div></section>
-<section class="section idol-quote"><div class="reveal"><div class="section-kicker">02 / WORDS FROM THE HEART</div><blockquote>Some stars shine in the sky.<br>Some <em>stay in the heart.</em></blockquote><p>Great artists may leave the stage, but the meaning people find in their work can continue to live.</p></div></section>
+
+<main class="idols-page">
+  <section class="idols-hero">
+    <div class="idols-hero-inner reveal">
+      <div class="eyebrow"><span></span> A PERSONAL TRIBUTE • MUSIC • MEMORY • LEGACY</div>
+      <h1>Two voices.<br><span>One lasting universe.</span></h1>
+      <p class="idols-hero-copy">Some artists become more than names on a screen. Their voices, movement, presence, and stories become part of the memories people carry with them. This space is dedicated to two icons who continue to inspire Cedric — Whitney Houston and Michael Jackson.</p>
+      <div class="idols-hero-art tilt">
+        <img src="assets/idols/king-and-queen.png" alt="Whitney Houston and Michael Jackson tribute artwork">
+        <div class="idols-caption">WHITNEY HOUSTON × MICHAEL JACKSON</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section idols-intro">
+    <div class="section-kicker reveal">01 / THE TWO ICONS</div>
+    <div class="split">
+      <div class="reveal"><h2>Different stories.<br><span>Endless echoes.</span></h2></div>
+      <div class="reveal"><p class="lead">Whitney Houston and Michael Jackson created in different ways, but both left behind something that cannot be measured only by records or performances: a feeling. Their work reminds us that art can become memory, comfort, inspiration, and a language of its own.</p></div>
+    </div>
+
+    <div class="idols-duo">
+      <article class="idol-card reveal tilt">
+        <img src="assets/idols/whitney-houston.jpg" alt="Whitney Houston tribute artwork">
+        <div class="idol-card-content">
+          <div class="idol-number">01 / THE VOICE</div>
+          <h3>WHITNEY<br><span>HOUSTON</span></h3>
+          <p>A voice remembered for its power, warmth, emotion, and ability to make a moment feel personal.</p>
+          <span class="idol-tag">A VOICE THAT STILL RESONATES</span>
+        </div>
+      </article>
+
+      <article class="idol-card reveal tilt">
+        <img src="assets/idols/michael-jackson.jpg" alt="Michael Jackson tribute artwork">
+        <div class="idol-card-content">
+          <div class="idol-number">02 / THE KING OF POP</div>
+          <h3>MICHAEL<br><span>JACKSON</span></h3>
+          <p>An artist remembered for turning music, movement, imagination, and performance into a world of his own.</p>
+          <span class="idol-tag">A LEGACY IN MOTION</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section idol-words">
+    <div class="idol-words-inner reveal">
+      <div class="section-kicker">02 / WORDS FROM THE HEART</div>
+      <blockquote>“Some stars shine in the sky.<br>Some <em>stay in the heart.</em>”</blockquote>
+      <p class="small-wording">Whitney and Michael remind us that an artist's life may have an ending, but the meaning people find in the art can continue. Years can pass, generations can change, and still a familiar voice or a familiar rhythm can bring a memory back to life.</p>
+      <div class="idol-divider"></div>
+      <p class="small-wording">This is not only a collection of pictures. It is a small corner of Cedric's universe reserved for admiration, inspiration, and gratitude for two artists whose work continues to move people.</p>
+    </div>
+  </section>
+
+  <section class="marquee idol-marquee"><div>✦ WHITNEY HOUSTON ✦ MICHAEL JACKSON ✦ MUSIC ✦ MEMORY ✦ ART ✦ LEGACY ✦</div><div aria-hidden="true">✦ WHITNEY HOUSTON ✦ MICHAEL JACKSON ✦ MUSIC ✦ MEMORY ✦ ART ✦ LEGACY ✦</div></section>
+
+  <section class="idol-final">
+    <div class="reveal">
+      <div class="eyebrow"><span></span> THE MUSIC CONTINUES</div>
+      <h2>Remember the voice.<br>Remember the <span>magic.</span></h2>
+      <p>For the songs that became memories, the performances that became moments, and the art that continues to inspire — this little universe will always have a place for them.</p>
+      <a class="btn btn-primary idol-back" href="index.html">RETURN TO CEDRIC'S UNIVERSE <span>↗</span></a>
+    </div>
+  </section>
 </main>
-<footer class="site-footer">
-<div class="footer-orbit"></div>
-<img class="footer-logo" src="assets/FOOTER LOGO TRANSPARENT.png" alt="Cedric Reyes">
-<p>EXPLORING • CREATING • CAPTURING</p>
-<div class="footer-nav"><a class="" href="index.html">HOME</a>
-<a class="" href="about.html">ABOUT</a>
-<a class="" href="images.html">IMAGES</a>
-<a class="" href="shots.html">SHOTS</a>
-<a class="" href="edits.html">EDITS</a>
-<a class="" href="idols.html">IDOLS</a>
-<a class="" href="marvel.html">MARVEL</a></div>
-<small>© 2026 CEDRIC REYES | ALL RIGHTS RESERVED</small>
-</footer>
-<div class="lightbox" id="lightbox" aria-hidden="true">
-<button class="lightbox-close" aria-label="Close">×</button>
-<button class="lightbox-prev" aria-label="Previous">←</button>
-<figure><img src="" alt=""><figcaption></figcaption></figure>
-<button class="lightbox-next" aria-label="Next">→</button>
-</div>
+
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
