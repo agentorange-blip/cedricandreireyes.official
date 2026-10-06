@@ -1,4 +1,3 @@
-  0%,100%{
     transform:translateY(0) rotateX(0deg) rotateY(0deg);
   }
   50%{
@@ -35,6 +34,15 @@
   }
 }
 
+@keyframes aboutInnerRing{
+  from{
+    transform:translate(-50%,-50%) rotate(0deg);
+  }
+  to{
+    transform:translate(-50%,-50%) rotate(360deg);
+  }
+}
+
 @keyframes aboutOuterRing{
   from{
     transform:translate(-50%,-50%) rotate(0deg);
@@ -46,7 +54,7 @@
 
 @keyframes aboutScan{
   0%{
-    top:19%;
+    top:18%;
     opacity:0;
   }
   10%{
@@ -59,7 +67,7 @@
     opacity:.8;
   }
   100%{
-    top:81%;
+    top:82%;
     opacity:0;
   }
 }
