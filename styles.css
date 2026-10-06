@@ -1,121 +1,602 @@
-    transform:translateY(0) rotateX(0deg) rotateY(0deg);
+/* =========================================================
+   CEDRIC ABOUT PAGE — COSMIC PORTRAIT
+   ADDITIVE ONLY — DOES NOT MODIFY EXISTING SITE CSS
+========================================================= */
+
+.about-photo {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.about-photo-frame {
+  position: relative;
+  width: min(500px, 82vw);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  animation: aboutFloat 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.about-photo-glow {
+  position: absolute;
+  width: 76%;
+  height: 76%;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(84,169,255,.55) 0%,
+      rgba(116,229,255,.25) 28%,
+      rgba(159,124,255,.20) 48%,
+      rgba(255,54,95,.08) 62%,
+      transparent 76%
+    );
+
+  filter: blur(28px);
+
+  z-index: 0;
+  pointer-events: none;
+
+  animation: aboutGlow 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   INNER RING
+========================================================= */
+
+.about-photo-frame::before {
+  content: "";
+
+  position: absolute;
+
+  width: 82%;
+  height: 82%;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(116,229,255,.28);
+
+  box-shadow:
+    0 0 30px rgba(84,169,255,.18),
+    inset 0 0 25px rgba(84,169,255,.08);
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  animation:
+    aboutInnerRing
+    9s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   OUTER RING
+========================================================= */
+
+.about-photo-frame::after {
+  content: "";
+
+  position: absolute;
+
+  width: 94%;
+  height: 94%;
+
+  border-radius: 50%;
+
+  border:
+    1px dashed rgba(159,124,255,.30);
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  animation:
+    aboutOuterRing
+    22s
+    linear
+    infinite reverse;
+}
+
+
+/* =========================================================
+   CEDRIC IMAGE
+========================================================= */
+
+.about-photo-frame > img {
+
+  position: relative;
+
+  width: 64%;
+  height: 64%;
+
+  object-fit: cover;
+
+  object-position: center 20%;
+
+  display: block;
+
+  border-radius: 50%;
+
+  border: 4px solid #050b18;
+
+  background: #050b18;
+
+  z-index: 5;
+
+  box-shadow:
+    0 0 0 4px rgba(84,169,255,.9),
+    0 0 0 8px rgba(159,124,255,.65),
+    0 0 0 11px rgba(255,54,95,.18),
+    0 0 35px rgba(84,169,255,.55),
+    0 0 80px rgba(84,169,255,.30),
+    0 0 120px rgba(159,124,255,.20);
+
+  transition:
+    transform .6s ease,
+    filter .6s ease,
+    box-shadow .6s ease;
+}
+
+
+.about-photo-frame:hover > img {
+
+  transform:
+    scale(1.04)
+    translateZ(18px);
+
+  filter:
+    brightness(1.07)
+    contrast(1.04)
+    saturate(1.08);
+
+  box-shadow:
+    0 0 0 4px rgba(84,169,255,1),
+    0 0 0 8px rgba(159,124,255,.80),
+    0 0 0 11px rgba(255,54,95,.24),
+    0 0 45px rgba(84,169,255,.80),
+    0 0 95px rgba(116,229,255,.38),
+    0 0 140px rgba(159,124,255,.28);
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.about-photo-orbit {
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  transform-origin: center;
+
+  z-index: 3;
+}
+
+
+/* BLUE */
+
+.about-orbit-blue {
+
+  width: 116%;
+  height: 49%;
+
+  border:
+    1px solid rgba(84,169,255,.75);
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-18deg);
+
+  box-shadow:
+    0 0 12px rgba(84,169,255,.25);
+
+  animation:
+    aboutBlueOrbit
+    12s
+    linear
+    infinite;
+}
+
+
+.about-orbit-blue::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  left: 12%;
+  top: 6%;
+
+  border-radius: 50%;
+
+  background: #74e5ff;
+
+  box-shadow:
+    0 0 8px #74e5ff,
+    0 0 20px #54a9ff,
+    0 0 35px rgba(84,169,255,.75);
+}
+
+
+/* RED */
+
+.about-orbit-red {
+
+  width: 132%;
+  height: 61%;
+
+  border:
+    1px solid rgba(255,54,95,.50);
+
+  transform:
+    translate(-50%,-50%)
+    rotate(27deg);
+
+  box-shadow:
+    0 0 15px rgba(255,54,95,.15);
+
+  animation:
+    aboutRedOrbit
+    17s
+    linear
+    infinite reverse;
+}
+
+
+.about-orbit-red::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  right: 10%;
+  top: 10%;
+
+  border-radius: 50%;
+
+  background: #ff365f;
+
+  box-shadow:
+    0 0 8px #ff365f,
+    0 0 20px rgba(255,54,95,.8),
+    0 0 35px rgba(255,54,95,.35);
+}
+
+
+/* =========================================================
+   SCAN LINE
+========================================================= */
+
+.about-photo-scan {
+
+  position: absolute;
+
+  width: 64%;
+  height: 3px;
+
+  left: 18%;
+  top: 18%;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(116,229,255,.95),
+      white,
+      rgba(116,229,255,.95),
+      transparent
+    );
+
+  box-shadow:
+    0 0 10px rgba(116,229,255,.9),
+    0 0 25px rgba(84,169,255,.65);
+
+  opacity: .75;
+
+  z-index: 7;
+
+  pointer-events: none;
+
+  animation:
+    aboutScan
+    4.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.about-photo-glow::before,
+.about-photo-glow::after {
+
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: #74e5ff;
+
+  box-shadow:
+    0 0 8px #74e5ff,
+    0 0 18px rgba(84,169,255,.8);
+}
+
+
+.about-photo-glow::before {
+
+  width: 4px;
+  height: 4px;
+
+  top: 8%;
+  right: 12%;
+
+  animation:
+    aboutParticleOne
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+.about-photo-glow::after {
+
+  width: 3px;
+  height: 3px;
+
+  bottom: 15%;
+  left: 10%;
+
+  animation:
+    aboutParticleTwo
+    5.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes aboutFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotateX(0deg)
+      rotateY(0deg);
   }
-  50%{
-    transform:translateY(-12px) rotateX(1deg) rotateY(-1deg);
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotateX(1deg)
+      rotateY(-1deg);
   }
 }
 
-@keyframes aboutPortraitGlow{
-  0%,100%{
-    opacity:.65;
-    transform:scale(.96);
+
+@keyframes aboutGlow {
+
+  0%,
+  100% {
+    opacity: .65;
+    transform: scale(.96);
   }
-  50%{
-    opacity:1;
-    transform:scale(1.08);
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
   }
 }
 
-@keyframes aboutBlueOrbit{
-  from{
-    transform:translate(-50%,-50%) rotate(-18deg) rotate(0deg);
+
+@keyframes aboutBlueOrbit {
+
+  from {
+    transform:
+      translate(-50%,-50%)
+      rotate(-18deg)
+      rotate(0deg);
   }
-  to{
-    transform:translate(-50%,-50%) rotate(-18deg) rotate(360deg);
+
+  to {
+    transform:
+      translate(-50%,-50%)
+      rotate(-18deg)
+      rotate(360deg);
   }
 }
 
-@keyframes aboutRedOrbit{
-  from{
-    transform:translate(-50%,-50%) rotate(27deg) rotate(0deg);
+
+@keyframes aboutRedOrbit {
+
+  from {
+    transform:
+      translate(-50%,-50%)
+      rotate(27deg)
+      rotate(0deg);
   }
-  to{
-    transform:translate(-50%,-50%) rotate(27deg) rotate(360deg);
+
+  to {
+    transform:
+      translate(-50%,-50%)
+      rotate(27deg)
+      rotate(360deg);
   }
 }
 
-@keyframes aboutInnerRing{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg);
+
+@keyframes aboutInnerRing {
+
+  from {
+    transform:
+      translate(-50%,-50%)
+      rotate(0deg);
   }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg);
+
+  to {
+    transform:
+      translate(-50%,-50%)
+      rotate(360deg);
   }
 }
 
-@keyframes aboutOuterRing{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg);
+
+@keyframes aboutOuterRing {
+
+  from {
+    transform:
+      translate(-50%,-50%)
+      rotate(0deg);
   }
-  to{
-    transform:translate(-50%,-50%) rotate(-360deg);
+
+  to {
+    transform:
+      translate(-50%,-50%)
+      rotate(-360deg);
   }
 }
 
-@keyframes aboutScan{
-  0%{
-    top:18%;
-    opacity:0;
+
+@keyframes aboutScan {
+
+  0% {
+    top: 18%;
+    opacity: 0;
   }
-  10%{
-    opacity:.8;
+
+  10% {
+    opacity: .8;
   }
-  50%{
-    opacity:1;
+
+  50% {
+    opacity: 1;
   }
-  90%{
-    opacity:.8;
+
+  90% {
+    opacity: .8;
   }
-  100%{
-    top:82%;
-    opacity:0;
+
+  100% {
+    top: 82%;
+    opacity: 0;
   }
 }
 
-@keyframes aboutParticleOne{
-  0%,100%{
-    transform:translate(0,0) scale(1);
-    opacity:.4;
+
+@keyframes aboutParticleOne {
+
+  0%,
+  100% {
+    transform:
+      translate(0,0)
+      scale(1);
+
+    opacity: .4;
   }
-  50%{
-    transform:translate(-15px,20px) scale(1.8);
-    opacity:1;
+
+  50% {
+    transform:
+      translate(-15px,20px)
+      scale(1.8);
+
+    opacity: 1;
   }
 }
 
-@keyframes aboutParticleTwo{
-  0%,100%{
-    transform:translate(0,0) scale(1);
-    opacity:.3;
+
+@keyframes aboutParticleTwo {
+
+  0%,
+  100% {
+    transform:
+      translate(0,0)
+      scale(1);
+
+    opacity: .3;
   }
-  50%{
-    transform:translate(20px,-18px) scale(1.7);
-    opacity:1;
+
+  50% {
+    transform:
+      translate(20px,-18px)
+      scale(1.7);
+
+    opacity: 1;
   }
 }
 
-@media(max-width:1000px){
-  .about-photo{
-    min-height:540px;
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .about-photo {
+    min-height: 540px;
   }
+
 }
 
-@media(max-width:680px){
-  .about-photo{
-    min-height:430px;
+
+@media (max-width: 680px) {
+
+  .about-photo {
+    min-height: 430px;
   }
 
-  .about-photo-frame{
-    width:min(360px,86vw);
+  .about-photo-frame {
+    width: min(360px,86vw);
   }
 
-  .about-orbit-blue{
-    width:116%;
-    height:52%;
+  .about-orbit-blue {
+    width: 116%;
+    height: 52%;
   }
 
-  .about-orbit-red{
-    width:132%;
-    height:62%;
+  .about-orbit-red {
+    width: 132%;
+    height: 62%;
   }
+
 }
